@@ -1,32 +1,83 @@
 services:
-  kea:
+  # Modelo contendor para un servidor kea
+  # kea:
+  #   build: ./kea
+  #   container_name: kea
+  #   networks:
+  #     dhcp_lab:
+  #       ipv4_address: 192.168.10.2
+  #   cap_add:
+  #     - NET_ADMIN
+  #   restart: unless-stopped
+
+  # Servidores DHCP
+  ned:
     build: ./kea
-    container_name: kea
+    container_name: ned
+    hostname: ned
     networks:
       dhcp_lab:
-        ipv4_address: 192.168.130.2
+        ipv4_address: 192.168.10.254
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
 
-  cliente1:
-    build: ./cliente
-    container_name: client1
+    volumes:
+      - ./kea/kea-dhcp4.conf:/etc/kea/kea-dhcp4.conf
+
+    robb:
+      build: ./kea
+      container_name: robb
+      hostname: robb
+      networks:
+        dhcp_lab:
+          ipv4_address: 192.168.10.253
+      cap_add:
+        - NET_ADMIN
+      restart: unless-stopped
+
+      volumes:
+        - ./kea/kea-dhcp4.conf:/etc/kea/kea-dhcp4.conf
+
+  # Servidor DNS
+  arya:
+    build: ./aria
+    container_name: aria
+    hostname: aria
     networks:
       dhcp_lab:
-        ipv4_address: 192.168.130.3
-        mac_address: 02:42:ac:11:00:10  # dirección HW fija
+        ipv4_address: 192.168.10.252
+    restart: unless-stopped
+
+  # Clientes DHCP
+  bran:
+    build: ./cliente
+    container_name: bran
+    hostname: bran
+    networks:
+      dhcp_lab:
     cap_add:
       - NET_ADMIN
     command: >
       sh -c "dhclient -v eth0 && sleep infinity"
 
-  cliente2:
+  jon:
     build: ./cliente
-
+    container_name: jon
+    hostname: jon
     networks:
       dhcp_lab:
-        ipv4_address: 192.168.130.4
+    cap_add:
+      - NET_ADMIN
+    command: >
+      sh -c "dhclient -v eth0 && sleep infinity"
+
+  sansha:
+    build: ./cliente
+    container_name: sansha
+    hostname: sansha
+    networks:
+      dhcp_lab:
     cap_add:
       - NET_ADMIN
     command: >
@@ -37,4 +88,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 192.168.130.0/24
+        - subnet: 192.168.10.0/24
