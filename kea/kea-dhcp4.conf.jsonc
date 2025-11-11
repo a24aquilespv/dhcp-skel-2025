@@ -1,0 +1,49 @@
+{
+  "Dhcp4": {
+    "interfaces-config": {
+      "interfaces": [
+        "eth0"
+      ],
+      "dhcp-socket-type": "raw"
+    },
+    "lease-database": {
+      "type": "memfile",
+      "persist": true,
+      "name": "/var/lib/kea/kea-leases4.csv",
+      "lfc-interval": 30
+    },
+    "authoritative": true,
+    "valid-lifetime": 600,
+    "renew-timer": 300,
+    "rebind-timer": 500,
+    // Servidor DNS en todas las asignaciones
+    "option-data": [
+      {
+        "name": "domain-name-servers",
+        "data": "192.168.10.252"
+      }
+    ],
+    "subnet4": [
+      {
+        "id": 1,
+        "subnet": "192.168.10.0/24",
+        "pools": [
+          {
+            "pool": "192.168.10.30 - 192.168.10.32"
+          },
+          {
+            "pool": "192.168.10.101 - 192.168.10.230"
+          }
+        ],
+        // DHCP OPTIONS a nivel de subred
+        "option-data": [
+          {
+            // Dominio
+            "name": "domain-name",
+            "data": "stark.lan"
+          }
+        ]
+      }
+    ]
+  }
+}

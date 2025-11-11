@@ -18,35 +18,45 @@ services:
     networks:
       dhcp_lab:
         ipv4_address: 192.168.10.254
+    # dns: 192.168.10.252
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
 
     volumes:
-      - ./kea/kea-dhcp4.conf:/etc/kea/kea-dhcp4.conf
+      - ./kea/kea-dhcp4.conf.jsonc:/etc/kea/kea-dhcp4.conf
+      # - ./ned/dhcp:/var/lib/dhcp
 
-    robb:
-      build: ./kea
-      container_name: robb
-      hostname: robb
-      networks:
-        dhcp_lab:
-          ipv4_address: 192.168.10.253
-      cap_add:
-        - NET_ADMIN
-      restart: unless-stopped
+  robb:
+    build: ./kea
+    container_name: robb
+    hostname: robb
+    networks:
+      dhcp_lab:
+        ipv4_address: 192.168.10.253
+    # dns: 192.168.10.252
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
 
-      volumes:
-        - ./kea/kea-dhcp4.conf:/etc/kea/kea-dhcp4.conf
+    volumes:
+      - ./kea/kea-dhcp4.conf.jsonc:/etc/kea/kea-dhcp4.conf
 
   # Servidor DNS
   arya:
-    build: ./aria
-    container_name: aria
-    hostname: aria
+    build: ./bind
+    container_name: arya
+    hostname: arya
     networks:
       dhcp_lab:
         ipv4_address: 192.168.10.252
+    dns: 127.0.0.1
+    command: ["-4", "-g"]
+    volumes:
+      - ./arya/named.conf.options:/etc/bind/named.conf.options
+      - ./arya/named.conf.local:/etc/bind/named.conf.local
+      - ./arya/zones/db.stark.lan:/etc/bind/zones/db.stark.lan
+      - ./arya/zones/db.192.168:/etc/bind/zones/db.192.168
     restart: unless-stopped
 
   # Clientes DHCP
@@ -56,6 +66,8 @@ services:
     hostname: bran
     networks:
       dhcp_lab:
+        ipv4_address: 192.168.10.11
+    # dns: 192.168.10.252
     cap_add:
       - NET_ADMIN
     command: >
@@ -67,6 +79,8 @@ services:
     hostname: jon
     networks:
       dhcp_lab:
+        ipv4_address: 192.168.10.12
+    # dns: 192.168.10.252
     cap_add:
       - NET_ADMIN
     command: >
@@ -78,6 +92,8 @@ services:
     hostname: sansha
     networks:
       dhcp_lab:
+        ipv4_address: 192.168.10.13
+    # dns: 192.168.10.252
     cap_add:
       - NET_ADMIN
     command: >

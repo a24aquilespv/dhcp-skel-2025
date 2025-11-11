@@ -1,0 +1,9 @@
+zone "stark.lan" {
+    type primary;
+    file "/etc/bind/zones/db.stark.lan";
+};
+
+zone "168.192.in-addr.arpa" {
+    type primary;
+    file "/etc/bind/zones/db.192.168";
+};
