@@ -9,5 +9,10 @@ RUN apt update  && apt install -y \
     isc-dhcp-client \
     && rm -rf /var/lib/apt/lists/*
 
-
 CMD ["sleep", "infinity"]
+
+# COPY ./entrypoint.sh /tmp/entrypoint.sh
+# RUN chmod +x /tmp/entrypoint.sh
+
+# ENTRYPOINT [ "/tmp/entrypoint.sh" ]
+

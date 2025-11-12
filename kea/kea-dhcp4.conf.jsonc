@@ -35,14 +35,49 @@
             "pool": "192.168.10.101 - 192.168.10.230"
           }
         ],
+        // "reservations": [
+        //   {
+        //     "hw-address": "6c:0b:5e:02:3f:5b",
+        //     "ip-address": "192.168.10.25"
+        //   }
+        // ],
         // DHCP OPTIONS a nivel de subred
         "option-data": [
+          {
+            "name": "routers",
+            "data": "192.168.10.5"
+          },
           {
             // Dominio
             "name": "domain-name",
             "data": "stark.lan"
           }
         ]
+      },
+      {
+        "id": 2,
+        "subnet": "192.168.11.0/24",
+        "pools": [
+          {
+            "pool": "192.168.11.1 - 192.168.11.4"
+          },
+          {
+            "pool": "192.168.11.6 - 192.168.11.254"
+          }
+        ],
+        // DHCP OPTIONS a nivel de subred
+        "option-data": [
+          {
+            "name": "routers",
+            "data": "192.168.11.5"
+          },
+          {
+            // Dominio
+            "name": "domain-name",
+            "data": "targaryen.lan"
+          }
+        ]
+
       }
     ]
   }
