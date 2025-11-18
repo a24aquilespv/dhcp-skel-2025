@@ -21,6 +21,12 @@
       {
         "name": "domain-name-servers",
         "data": "192.168.10.252"
+      },
+      {
+        // "name": "time-servers",
+        "name": "ntp-servers",
+        // "data": "ntp.roa.es"
+        "data": "150.214.94.101"
       }
     ],
     "subnet4": [
@@ -36,10 +42,16 @@
           }
         ],
         "reservations": [
-          // Reserva bran
+          // Reserva bran en stark.lan
           {
             "hw-address": "6c:0b:5e:02:3f:5b",
-            "ip-address": "192.168.10.30"
+            "ip-address": "192.168.10.30",
+            "option-data": [
+              {
+                "name": "ntp-servers",
+                "data": "132.163.97.3"
+              }
+            ]
           }
         ],
         // DHCP OPTIONS a nivel de subred
@@ -75,7 +87,7 @@
           {
             // Dominio
             "name": "domain-name",
-            "data": "targaryen.lan"
+            "data": "lannister.lan"
           }
         ]
       }

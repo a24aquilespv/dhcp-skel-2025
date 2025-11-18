@@ -1,6 +1,7 @@
 FROM debian:12
 
 RUN apt update  && apt install -y \
+    iputils-ping \
     procps \
     iproute2 \
     iputils-ping \

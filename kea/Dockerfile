@@ -1,6 +1,10 @@
 FROM debian:12
 
 RUN apt-get update && apt-get install -y \
+        neovim \
+        nano \
+        vim \
+        iputils-ping \
         procps \
         iproute2 \
         iputils-ping \

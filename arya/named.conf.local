@@ -8,12 +8,11 @@ zone "168.192.in-addr.arpa" {
     file "/etc/bind/zones/db.192.168";
 };
 
-zone "rnp.roa.es" {
+zone "ntp.roa.es" {
     type forward;
     forward only;
     forwarders {
         8.8.8.8;
-        8.8.4.4;
         199.184.182.1;
         150.214.5.83;
         150.214.5.84;
