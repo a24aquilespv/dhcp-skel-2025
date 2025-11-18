@@ -5,6 +5,8 @@
 /usr/bin/echo "1" > /proc/sys/net/ipv4/ip_forward
 
 # Reglas de NATEO
+# firewall_rules &>/dev/null &
+
 /usr/sbin/nft add table nat
 /usr/sbin/nft add chain nat pre_enrutado { type nat hook prerouting priority dstnat \; }
 

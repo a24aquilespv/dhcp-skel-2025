@@ -3,7 +3,7 @@
 $TTL 604800
 
 ; SOA
-@         IN      SOA   ned.stark.lan.  admin.stark.lan. (
+@         IN      SOA   arya.stark.lan.  admin.stark.lan. (
                                 2003080800 ; serial number
                                 12h        ; refresh
                                 15m        ; update retry
@@ -12,9 +12,9 @@ $TTL 604800
                                 )
 
 ; Name server
-@         IN      NS      ned.stark.lan.
+@         IN      NS      arya.stark.lan.
 
 ; RRs: PTR
-254.10    IN      PTR     ned.stark.lan.
-253.10    IN      PTR     robb.stark.lan.
+; 254.10    IN      PTR     ned.stark.lan.
+; 253.10    IN      PTR     robb.stark.lan.
 252.10    IN      PTR     arya.stark.lan.

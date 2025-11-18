@@ -29,10 +29,34 @@
         "data": "150.214.94.101"
       }
     ],
+    // Configurar ddns-updates
+    // Conexión
+    "dhcp-ddns": {
+      "enable-updates": true,
+      "server-ip": "127.0.0.1",
+      "server-port": 53001,
+      "sender-ip": "",
+      "sender-port": 0,
+      "max-queue-size": 1024,
+      "ncr-protocol": "UDP",
+      "ncr-format": "JSON"
+    },
+    // Comportamiento
+    "ddns-send-updates": true,
+    "ddns-override-no-update": false,
+    "ddns-override-client-update": false,
+    "ddns-replace-client-name": "never",
+    "ddns-generated-prefix": "myhost",
+    "ddns-qualifying-suffix": "",
+    "ddns-update-on-renew": false,
+    //"ddns-conflict-resolution-mode": "check-with-dhcid",
+    "hostname-char-set": "",
+    "hostname-char-replacement": "",
     "subnet4": [
       {
         "id": 1,
         "subnet": "192.168.10.0/24",
+        "ddns-qualifying-suffix": "stark.lan",
         "pools": [
           {
             "pool": "192.168.10.30 - 192.168.10.32"
@@ -70,6 +94,7 @@
       {
         "id": 2,
         "subnet": "192.168.11.0/24",
+        "ddns-qualifying-suffix": "lannister.lan",
         "pools": [
           {
             "pool": "192.168.11.1 - 192.168.11.4"

@@ -9,6 +9,7 @@ RUN apt update  && apt install -y \
     dnsutils \
     nano \
     vim \
+    neovim \
     && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 53

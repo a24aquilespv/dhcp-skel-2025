@@ -45,8 +45,10 @@ services:
     entrypoint: [ "/tmp/entrypoint.sh" ]
     volumes:
       - ./kea/kea-dhcp4.conf.jsonc:/etc/kea/kea-dhcp4.conf
+      - ./kea-dhcp-ddns.conf.jsonc:/etc/kea/kea-dhcp-ddns.conf
       - ./ned/entrypoint.sh:/tmp/entrypoint.sh
-    restart: unless-stopped
+    # restart: unless-stopped
+    restart: on-failure
 
   robb:
     build: ./kea
@@ -62,6 +64,7 @@ services:
     entrypoint: [ "/tmp/entrypoint.sh" ]
     volumes:
       - ./kea/kea-dhcp4.conf.jsonc:/etc/kea/kea-dhcp4.conf
+      - ./kea-dhcp-ddns.conf.jsonc:/etc/kea/kea-dhcp-ddns.conf
       - ./ned/entrypoint.sh:/tmp/entrypoint.sh
 
   # Servidor DNS

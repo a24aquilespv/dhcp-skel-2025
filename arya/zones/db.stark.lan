@@ -3,7 +3,7 @@
 $TTL 604800
 
 ; SOA
-@         IN      SOA   ned.stark.lan.  admin.stark.lan. (
+@         IN      SOA   arya.stark.lan.  admin.stark.lan. (
                                 2003080800 ; serial number
                                 12h        ; refresh
                                 15m        ; update retry
@@ -12,9 +12,9 @@ $TTL 604800
                                 )
 
 ; Name server
-@         IN      NS      ned.stark.lan.
+@         IN      NS      arya.stark.lan.
 
 ; RRs A y CNAME
-ned     IN      A       192.168.10.254
-robb     IN      A      192.168.10.253
+; ned     IN      A       192.168.10.254
+; robb     IN      A      192.168.10.253
 arya     IN      A      192.168.10.252
