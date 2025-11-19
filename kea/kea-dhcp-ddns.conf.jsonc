@@ -1,0 +1,50 @@
+{
+    "DhcpDdns": {
+        "ip-address": "127.0.0.1",
+        "port": 53001,
+        "dns-server-timeout": 100,
+
+        // Name Change Request
+        "ncr-protocol": "UDP",
+        "ncr-format": "JSON",
+
+        // Claves tsig
+        "tsig-keys": [
+            {
+                "name": "dhcpddns",
+                "algorithm": "hmac-sha224",
+                "secret": "vYqd4OwrnD9QKNfS8Dy9Kxux5GDRXk//XKcs5g=="
+            }
+        ],
+        // Servidor primario zona directa
+        "forward-ddns": {
+            "ddns-domains": [
+                {
+                    "name": "stark.lan",
+                    "key-name": "dhcpddns",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.252",
+                            "port": 53
+                        }
+                    ]
+                }
+            ]
+        },
+        // Servidor primario zona inversa
+        "reverse-ddns": {
+            "ddns-domains": [
+                {
+                    "name": "168.192.in-addr.arpa",
+                    "key-name": "dhcpddns",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.252",
+                            "port": 53
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
