@@ -4,10 +4,9 @@ key "dhcpddns" {
     secret "vYqd4OwrnD9QKNfS8Dy9Kxux5GDRXk//XKcs5g==";
 };
 
-
 zone "stark.lan" {
     type primary;
-    file "/etc/bind/zones/db.stark.lan";
+    file "zonas/db.stark.lan";
     allow-update {
         127.0.0.1;
         key "dhcpddns";
@@ -16,7 +15,7 @@ zone "stark.lan" {
 
 zone "168.192.in-addr.arpa" {
     type primary;
-    file "/etc/bind/zones/db.192.168";
+    file "zonas/db.192.168";
     allow-update {
         127.0.0.1;
         key "dhcpddns";

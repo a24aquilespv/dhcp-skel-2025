@@ -1,20 +1,20 @@
-; stark.lan.
-; ttl base de 7 días
-$TTL 604800
-
-; SOA
-@         IN      SOA   arya.stark.lan.  admin.stark.lan. (
-                                2003080800 ; serial number
-                                12h        ; refresh
-                                15m        ; update retry
-                                4d         ; expiry
-                                2h         ; minimum
-                                )
-
-; Name server
-@         IN      NS      arya.stark.lan.
-
-; RRs A y CNAME
-; ned     IN      A       192.168.10.254
-; robb     IN      A      192.168.10.253
-arya     IN      A      192.168.10.252
+$TTL 604800	; 1 week
+stark.lan.		IN SOA	arya.stark.lan. admin.stark.lan. (
+				2003080821 ; serial
+				43200      ; refresh (12 hours)
+				900        ; retry (15 minutes)
+				345600     ; expire (4 days)
+				7200       ; minimum (2 hours)
+				)
+			NS	arya.stark.lan.
+arya.stark.lan.		A	192.168.10.252
+$TTL 600	; 10 minutes
+bran.stark.lan.		A	192.168.10.30
+			DHCID	( AAABtSVYcmfyMO1i6ZIRzP2Sj/QrZv/bPwWwTvGvihCE
+				2J8= ) ; 0 1 32
+jon.stark.lan.		A	192.168.10.101
+			DHCID	( AAABAFUu0UyFaK/AIkyXPhkoamFqvvvrO9zODhD6z94b
+				CLY= ) ; 0 1 32
+sansha.stark.lan.	A	192.168.10.103
+			DHCID	( AAABlQK7f0J6UJ2uwyFOCk62ug7higkCHHaz6KG7QZ/4
+				O4Q= ) ; 0 1 32

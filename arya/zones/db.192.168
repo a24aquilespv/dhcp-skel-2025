@@ -1,20 +1,22 @@
-; 192.168.0.0/167
-; ttl base de 7 días
-$TTL 604800
-
-; SOA
-@         IN      SOA   arya.stark.lan.  admin.stark.lan. (
-                                2003080800 ; serial number
-                                12h        ; refresh
-                                15m        ; update retry
-                                4d         ; expiry
-                                2h         ; minimum
-                                )
-
-; Name server
-@         IN      NS      arya.stark.lan.
-
-; RRs: PTR
-; 254.10    IN      PTR     ned.stark.lan.
-; 253.10    IN      PTR     robb.stark.lan.
-252.10    IN      PTR     arya.stark.lan.
+$TTL 604800	; 1 week
+168.192.in-addr.arpa.	IN SOA	arya.stark.lan. admin.stark.lan. (
+				2003080815 ; serial
+				43200      ; refresh (12 hours)
+				900        ; retry (15 minutes)
+				345600     ; expire (4 days)
+				7200       ; minimum (2 hours)
+				)
+			NS	arya.stark.lan.
+$TTL 600	; 10 minutes
+101.10.168.192.in-addr.arpa. PTR jon.stark.lan.
+			DHCID	( AAABAFUu0UyFaK/AIkyXPhkoamFqvvvrO9zODhD6z94b
+				CLY= ) ; 0 1 32
+103.10.168.192.in-addr.arpa. PTR sansha.stark.lan.
+			DHCID	( AAABlQK7f0J6UJ2uwyFOCk62ug7higkCHHaz6KG7QZ/4
+				O4Q= ) ; 0 1 32
+$TTL 604800	; 1 week
+252.10.168.192.in-addr.arpa. PTR arya.stark.lan.
+$TTL 600	; 10 minutes
+30.10.168.192.in-addr.arpa. PTR	bran.stark.lan.
+			DHCID	( AAABtSVYcmfyMO1i6ZIRzP2Sj/QrZv/bPwWwTvGvihCE
+				2J8= ) ; 0 1 32

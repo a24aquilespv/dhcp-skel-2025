@@ -43,13 +43,12 @@
     },
     // Comportamiento
     "ddns-send-updates": true,
+    "ddns-update-on-renew": true,
     "ddns-override-no-update": false,
     "ddns-override-client-update": false,
     "ddns-replace-client-name": "never",
     "ddns-generated-prefix": "myhost",
     "ddns-qualifying-suffix": "",
-    "ddns-update-on-renew": false,
-    //"ddns-conflict-resolution-mode": "check-with-dhcid",
     "hostname-char-set": "",
     "hostname-char-replacement": "",
     "subnet4": [

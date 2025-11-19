@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
         dnsutils \
         rsyslog \
         kea-dhcp4-server \
+        kea-dhcp-ddns-server \
         && rm -rf /var/lib/apt/lists/*
 
 #COPY kea-dhcp4.conf /etc/kea/kea-dhcp4.conf
