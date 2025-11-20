@@ -1,44 +1,60 @@
 {
-  "DhcpDdns": {
-    "ip-address": "127.0.0.1",
-    "port": 53001,
-    "dns-server-timeout": 100,
-    "ncr-protocol": "UDP",
-    "ncr-format": "JSON",
-    "tsig-keys": [
-      {
-        "name": "dhcpddns",
-        "algorithm": "hmac-sha224",
-        "secret": "vYqd4OwrnD9QKNfS8Dy9Kxux5GDRXk//XKcs5g=="
-      }
-    ],
-    "forward-ddns": {
-      "ddns-domains": [
-        {
-          "name": "stark.lan.",
-          "key-name": "dhcpddns",
-          "dns-servers": [
+    "DhcpDdns": {
+        "ip-address": "127.0.0.1",
+        "port": 53001,
+        "dns-server-timeout": 100,
+        "ncr-protocol": "UDP",
+        "ncr-format": "JSON",
+        "tsig-keys": [
             {
-              "ip-address": "192.168.10.252",
-              "port": 53
+                "name": "dhcpddns",
+                "algorithm": "hmac-sha224",
+                "secret": "vYqd4OwrnD9QKNfS8Dy9Kxux5GDRXk//XKcs5g=="
             }
-          ]
-        }
-      ]
-    },
-    "reverse-ddns": {
-      "ddns-domains": [
-        {
-          "name": "168.192.in-addr.arpa.",
-          "key-name": "dhcpddns",
-          "dns-servers": [
+        ],
+        "forward-ddns": {
+            "ddns-domains": [
+                {
+                    "name": "stark.lan.",
+                    "key-name": "dhcpddns",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.252",
+                            "port": 53
+                        }
+                    ]
+                }
+            ]
+        },
+        "reverse-ddns": {
+            "ddns-domains": [
+                {
+                    "name": "168.192.in-addr.arpa.",
+                    "key-name": "dhcpddns",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.252",
+                            "port": 53
+                        }
+                    ]
+                }
+            ]
+        },
+        "loggers": [
             {
-              "ip-address": "192.168.10.252",
-              "port": 53
+                "name": "kea-dhcp-ddns",
+                "severity": "info",
+                "debuglevel": 0,
+                "output_options": [
+                    {
+                        "output": "/var/log/kea/ddns-info.log",
+                        "maxver": 5,
+                        "maxsize": 204800,
+                        "flush": true,
+                        "pattern": "%d{%j %H:%M:%S.%q} %c %m\n"
+                    }
+                ]
             }
-          ]
-        }
-      ]
+        ]
     }
-  }
 }

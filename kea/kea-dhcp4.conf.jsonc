@@ -1,120 +1,147 @@
 {
-  "Dhcp4": {
-    "interfaces-config": {
-      "interfaces": [
-        "eth0"
-      ],
-      "dhcp-socket-type": "raw"
-    },
-    "lease-database": {
-      "type": "memfile",
-      "persist": true,
-      "name": "/var/lib/kea/kea-leases4.csv",
-      "lfc-interval": 30
-    },
-    "authoritative": true,
-    "valid-lifetime": 600,
-    "renew-timer": 300,
-    "rebind-timer": 500,
-    // Servidor DNS en todas las asignaciones
-    "option-data": [
-      {
-        "name": "domain-name-servers",
-        "data": "192.168.10.252"
-      },
-      {
-        // "name": "time-servers",
-        "name": "ntp-servers",
-        // "data": "ntp.roa.es"
-        "data": "150.214.94.101"
-      }
-    ],
-    // Configurar ddns-updates
-    // Conexión
-    "dhcp-ddns": {
-      "enable-updates": true,
-      "server-ip": "127.0.0.1",
-      "server-port": 53001,
-      "sender-ip": "",
-      "sender-port": 0,
-      "max-queue-size": 1024,
-      "ncr-protocol": "UDP",
-      "ncr-format": "JSON"
-    },
-    // Comportamiento
-    "ddns-send-updates": true,
-    "ddns-update-on-renew": true,
-    "ddns-override-no-update": false,
-    "ddns-override-client-update": false,
-    "ddns-replace-client-name": "never",
-    "ddns-generated-prefix": "myhost",
-    "ddns-qualifying-suffix": "",
-    "hostname-char-set": "",
-    "hostname-char-replacement": "",
-    "subnet4": [
-      {
-        "id": 1,
-        "subnet": "192.168.10.0/24",
-        "ddns-qualifying-suffix": "stark.lan",
-        "pools": [
-          {
-            "pool": "192.168.10.30 - 192.168.10.32"
-          },
-          {
-            "pool": "192.168.10.101 - 192.168.10.230"
-          }
+    "Dhcp4": {
+        "authoritative": true,
+        "interfaces-config": {
+            "interfaces": [
+                "eth0"
+            ],
+            "dhcp-socket-type": "raw"
+        },
+        "valid-lifetime": 3600,
+        "renew-timer": 1800,
+        "rebind-timer": 2880,
+        "lease-database": {
+            "type": "memfile",
+            "persist": true,
+            "name": "/var/lib/kea/kea-leases4.csv",
+            "lfc-interval": 30
+        },
+        "loggers": [
+            {
+                "name": "kea-dhcp4",
+                "severity": "INFO",
+                "debuglevel": 0,
+                // Versión de kea empleada: 2.2.0
+                // output_options: Era la key en versiones <2.5.1
+                // output-options: Añadido en la versión 2.5.1
+                // output_options: Se convierte en alias de output-options 2.5.2
+                // output_options: Deprecado >2.7.4
+                "output_options": [
+                    {
+                        // Fichero de salida
+                        "output": "/var/log/kea/dhcp4-info.log",
+                        // Rotar logs al llegar 2 KiB
+                        "maxsize": 204800,
+                        // Limite de ficheros de log rotados que pueden haber
+                        // (i.e 8 rotados + 1 activo)
+                        "maxver": 8,
+                        // Almacenar en un buffer temporal los logs antes
+                        // de escribir en disco (o lo que esté configurado en output)
+                        "flush": true,
+                        "pattern": "%d{%j %H:%M:%S.%q} %c %m\n"
+                    }
+                ]
+            }
         ],
-        "reservations": [
-          // Reserva bran en stark.lan
-          {
-            "hw-address": "6c:0b:5e:02:3f:5b",
-            "ip-address": "192.168.10.30",
-            "option-data": [
-              {
+        // Servidor DNS en todas las asignaciones
+        "option-data": [
+            {
+                "name": "domain-name-servers",
+                "data": "192.168.10.252"
+            },
+            {
+                // "name": "time-servers",
                 "name": "ntp-servers",
-                "data": "132.163.97.3"
-              }
-            ]
-          }
+                // "data": "ntp.roa.es"
+                "data": "150.214.94.101"
+            }
         ],
-        // DHCP OPTIONS a nivel de subred
-        "option-data": [
-          {
-            "name": "routers",
-            "data": "192.168.10.5"
-          },
-          {
-            // Dominio
-            "name": "domain-name",
-            "data": "stark.lan"
-          }
+        // Conexión para ddns
+        "dhcp-ddns": {
+            "enable-updates": true,
+            "server-ip": "127.0.0.1",
+            "server-port": 53001,
+            "sender-ip": "",
+            "sender-port": 0,
+            "max-queue-size": 1024,
+            // Name Change Request
+            "ncr-protocol": "UDP",
+            "ncr-format": "JSON"
+        },
+        // Comportamiento servidor dhcp ante un ddns
+        "ddns-send-updates": true,
+        "ddns-update-on-renew": true,
+        "ddns-override-no-update": false,
+        "ddns-override-client-update": false,
+        "ddns-replace-client-name": "never",
+        "ddns-generated-prefix": "myhost",
+        // "ddns-qualifying-suffix": "",
+        // "hostname-char-set": "",
+        // "hostname-char-replacement": "",
+        "subnet4": [
+            {
+                "id": 1,
+                "subnet": "192.168.10.0/24",
+                "ddns-qualifying-suffix": "stark.lan",
+                "pools": [
+                    {
+                        "pool": "192.168.10.30 - 192.168.10.32"
+                    },
+                    {
+                        "pool": "192.168.10.101 - 192.168.10.230"
+                    }
+                ],
+                "reservations": [
+                    // Reserva bran en stark.lan
+                    {
+                        "hw-address": "6c:0b:5e:02:3f:5b",
+                        "ip-address": "192.168.10.30",
+                        "option-data": [
+                            {
+                                "name": "ntp-servers",
+                                "data": "132.163.97.3"
+                            }
+                        ]
+                    }
+                ],
+                // DHCP OPTIONS a nivel de subred
+                "option-data": [
+                    {
+                        "name": "routers",
+                        "data": "192.168.10.5"
+                    },
+                    {
+                        // Dominio
+                        "name": "domain-name",
+                        "data": "stark.lan"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subnet": "192.168.11.0/24",
+                "ddns-qualifying-suffix": "lannister.lan",
+                "pools": [
+                    {
+                        "pool": "192.168.11.1 - 192.168.11.4"
+                    },
+                    {
+                        "pool": "192.168.11.6 - 192.168.11.254"
+                    }
+                ],
+                // DHCP OPTIONS a nivel de subred
+                "option-data": [
+                    {
+                        "name": "routers",
+                        "data": "192.168.11.5"
+                    },
+                    {
+                        // Dominio
+                        "name": "domain-name",
+                        "data": "lannister.lan"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "id": 2,
-        "subnet": "192.168.11.0/24",
-        "ddns-qualifying-suffix": "lannister.lan",
-        "pools": [
-          {
-            "pool": "192.168.11.1 - 192.168.11.4"
-          },
-          {
-            "pool": "192.168.11.6 - 192.168.11.254"
-          }
-        ],
-        // DHCP OPTIONS a nivel de subred
-        "option-data": [
-          {
-            "name": "routers",
-            "data": "192.168.11.5"
-          },
-          {
-            // Dominio
-            "name": "domain-name",
-            "data": "lannister.lan"
-          }
-        ]
-      }
-    ]
-  }
+    }
 }

@@ -47,6 +47,7 @@ services:
             - ./kea/kea-dhcp4.conf.jsonc:/etc/kea/kea-dhcp4.conf
             - ./kea/kea-dhcp-ddns.conf.jsonc:/etc/kea/kea-dhcp-ddns.conf
             - ./ned/entrypoint.sh:/tmp/entrypoint.sh
+            - ned_logs:/var/log/kea/
         # restart: unless-stopped
         restart: on-failure
 
@@ -81,7 +82,6 @@ services:
             - ./arya/named.conf.options:/etc/bind/named.conf.options
             - ./arya/named.conf.local:/etc/bind/named.conf.local
             - ./arya/zones:/var/cache/bind/zonas/
-
         restart: unless-stopped
 
     # Clientes DHCP
@@ -176,3 +176,8 @@ networks:
         ipam:
             config:
                 - subnet: 192.0.2.0/24
+
+# Crear named volumes para gestionar la persistencia de los logs
+volumes:
+    ned_logs:
+        name: "ned_logs"
