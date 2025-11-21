@@ -13,6 +13,7 @@ services:
     # Router
     router:
         build: ./router
+        image: nat-router
         container_name: router
         hostname: router
         depends_on:
@@ -32,6 +33,7 @@ services:
     # Servidores DHCP
     ned:
         build: ./kea
+        image: isc-kea
         container_name: ned
         hostname: ned
         depends_on:
@@ -53,6 +55,7 @@ services:
 
     # robb:
     #   build: ./kea
+    #   image: isc-kea
     #   container_name: robb
     #   hostname: robb
     #   networks:
@@ -72,6 +75,7 @@ services:
     arya:
         build: ./bind
         container_name: arya
+        image: isc-bind
         hostname: arya
         networks:
             dhcp_lab:
@@ -88,6 +92,7 @@ services:
     bran:
         build: ./cliente
         container_name: bran
+        image: dhcp4-cliente
         hostname: bran
         networks:
             dhcp_lab:
@@ -104,6 +109,7 @@ services:
 
     jon:
         build: ./cliente
+        image: dhcp4-cliente
         container_name: jon
         hostname: jon
         networks:
@@ -122,6 +128,7 @@ services:
 
     sansha:
         build: ./cliente
+        image: dhcp4-cliente
         container_name: sansha
         hostname: sansha
         networks:
@@ -138,6 +145,7 @@ services:
 
     lanister-cliente:
         build: ./cliente
+        image: dhcp4-cliente
         container_name: jolanister-clienten
         hostname: lanister-cliente
         networks:

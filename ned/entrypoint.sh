@@ -14,5 +14,5 @@ log_path="/var/log/kea/"
 [[ -d "${log_path}" ]] && /usr/bin/chown root:_kea "${log_path}" && /usr/bin/chmod 770 "${log_path}"
 
 # Levantar servidor ddns y dhcp4
-kea-dhcp-ddns -c /etc/kea/kea-dhcp-ddns.conf -d &
+kea-dhcp-ddns -c /etc/kea/kea-dhcp-ddns.conf -d
 kea-dhcp4 -c /etc/kea/kea-dhcp4.conf -d
