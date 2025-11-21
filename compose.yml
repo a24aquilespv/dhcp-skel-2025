@@ -146,7 +146,7 @@ services:
         cap_add:
             - NET_ADMIN
         command: >
-            sh -c "ip addr flush dev eth0 && dhclient -v eth0 && sleep infinity && ip route delete default"
+            sh -c "ip addr flush dev eth0 && dhclient -v eth0 && sleep infinity" && ip route delete default"
         depends_on:
             - ned
             # - robb

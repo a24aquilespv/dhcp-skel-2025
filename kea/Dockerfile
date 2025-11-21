@@ -1,19 +1,24 @@
 FROM debian:12
 
-RUN apt-get update && apt-get install -y \
-        traceroute \
-        neovim \
-        nano \
-        vim \
-        iputils-ping \
-        procps \
-        iproute2 \
-        iputils-ping \
-        dnsutils \
-        rsyslog \
-        kea-dhcp4-server \
-        kea-dhcp-ddns-server \
-        && rm -rf /var/lib/apt/lists/*
+# Utilizar el repositorio oficial del isc
+# Añade una nueva sources en /etc/apt/sources.list.d/
+RUN apt-get update && apt-get install curl -y
+RUN curl -s1Lf 'https://dl.cloudsmith.io/public/isc/kea-3-0/setup.deb.sh' | bash
+
+RUN apt-get install -y \
+    traceroute \
+    neovim \
+    nano \
+    vim \
+    iputils-ping \
+    procps \
+    iproute2 \
+    iputils-ping \
+    dnsutils \
+    rsyslog \
+    kea-dhcp4-server \
+    kea-dhcp-ddns-server \
+    && rm -rf /var/lib/apt/lists/*
 
 #COPY kea-dhcp4.conf /etc/kea/kea-dhcp4.conf
 
