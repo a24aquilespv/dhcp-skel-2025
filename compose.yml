@@ -154,6 +154,7 @@ services:
             - ned
             # - robb
             - arya
+            - router
 
 networks:
     dhcp_lab:

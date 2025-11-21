@@ -23,6 +23,16 @@
                             "port": 53
                         }
                     ]
+                },
+                {
+                    "name": "lannister.lan.",
+                    "key-name": "dhcpddns",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.252",
+                            "port": 53
+                        }
+                    ]
                 }
             ]
         },
