@@ -146,7 +146,7 @@ services:
     lanister-cliente:
         build: ./cliente
         image: dhcp4-cliente
-        container_name: jolanister-clienten
+        container_name: lanister-cliente
         hostname: lanister-cliente
         networks:
             red-lannister:
