@@ -1,4 +1,10 @@
 # Configuración de Servidor DNS e DHCP
+---
+
+## Esquema de rede
+![Esquema de red](./img/esquema_red.png)
+---
+
 
 ## Servidor DNS
 O equipo **arya** será o servidor DNS para os dominios:
@@ -78,8 +84,3 @@ Podes empregar o seguinte repositorio como punto de partida:
 
 **Esqueleto dun servidor DHCP con Kea:**  
 https://github.com/brunosct/dhcp-skel-2025.git
-
----
-
-## Esquema de rede
-![Esquema de red](./img/esquema_red.png)
