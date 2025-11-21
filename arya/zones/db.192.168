@@ -1,6 +1,6 @@
 $TTL 604800	; 1 week
 168.192.in-addr.arpa.	IN SOA	arya.stark.lan. admin.stark.lan. (
-				2003080867 ; serial
+				2003080875 ; serial
 				43200      ; refresh (12 hours)
 				900        ; retry (15 minutes)
 				345600     ; expire (4 days)
@@ -21,5 +21,5 @@ $TTL 1200	; 20 minutes
 			DHCID	( AAABtSVYcmfyMO1i6ZIRzP2Sj/QrZv/bPwWwTvGvihCE
 				2J8= ) ; 0 1 32
 1.11.168.192.in-addr.arpa. PTR	lanister-cliente.lannister.lan.
-			DHCID	( AAABmufBpX2ZtAoec1qGocn2TkPBl1nLbwpLq2voS4br
-				9BU= ) ; 0 1 32
+			DHCID	( AAABhxv87+aR9WAyltK0ec3Fq5HYRWsC6+u0QuF2aRyb
+				jI0= ) ; 0 1 32
