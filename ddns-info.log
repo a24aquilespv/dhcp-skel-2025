@@ -1,0 +1,486 @@
+324 11:48:00.628 kea-dhcp-ddns.dhcpddns DHCP_DDNS_CONFIGURE configuration update received: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+324 11:48:00.628 kea-dhcp-ddns.dctl DCTL_CONFIG_START parsing new configuration: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+324 11:48:00.628 kea-dhcp-ddns.dctl DCTL_CONFIG_COMPLETE server has completed configuration: listening on 127.0.0.1, port 53001, using UDP
+324 11:48:00.628 kea-dhcp-ddns.dctl DCTL_RUN_PROCESS DhcpDdns starting application event loop
+324 11:48:00.628 kea-dhcp-ddns.dhcpddns DHCP_DDNS_STARTED Kea DHCP-DDNS server version 2.2.0 started
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command build-report registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-get registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-reload registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-set registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-test registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-write registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command shutdown registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command status-get registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command version-get registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get-all registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset registered
+324 11:48:00.628 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset-all registered
+324 11:48:00.628 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_RECONFIGURING application is reconfiguring the queue manager
+324 11:48:00.628 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_STARTED application's queue manager has begun listening for requests.
+324 11:48:00.861 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: received and queued a request.
+324 11:48:00.861 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F:
+324 11:48:00.864 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Add to server: 192.168.10.252 port:53
+324 11:48:00.864 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: received and queued a request.
+324 11:48:00.864 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3:
+324 11:48:00.864 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: Forward Add to server: 192.168.10.252 port:53
+324 11:48:00.865 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.865 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+324 11:48:00.865 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Replace to server: 192.168.10.252 port:53
+324 11:48:00.865 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.865 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+324 11:48:00.865 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: Forward Replace to server: 192.168.10.252 port:53
+324 11:48:00.865 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.866 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+324 11:48:00.866 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Reverse Replace to server: 192.168.10.252 port:53
+324 11:48:00.866 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.866 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+324 11:48:00.866 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, sansha.stark.lan., with an RCODE: 8
+324 11:48:00.866 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [sansha.stark.lan.]
+IP Address: [192.168.10.31]
+DHCID: [0000017CDC12DE0D1A323B8F53165AE84FD1ED70B5C5CE07BDB1AEFB5DE3C3C8A21EF3]
+Lease Expires On: 20251120120800
+Lease Length: 1200
+Conflict Resolution: yes
+
+324 11:48:00.867 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.867 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+324 11:48:00.867 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_SUCCEEDED DHCP_DDNS Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: successfully added the DNS mapping addition for this request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [bran.stark.lan.]
+IP Address: [192.168.10.30]
+DHCID: [000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F]
+Lease Expires On: 20251120120800
+Lease Length: 1200
+Conflict Resolution: yes
+
+324 11:48:00.869 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 00000138231BECE91C975217FEDD10AFA343BF1CF684A9BC0A04A9734D4CA9660DC752: received and queued a request.
+324 11:48:00.869 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_MATCH No DNS servers match FQDN lanister-cliente.lannister.lan.
+324 11:48:00.869 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_FWD_MATCH_ERROR Request ID 00000138231BECE91C975217FEDD10AFA343BF1CF684A9BC0A04A9734D4CA9660DC752: the configured list of forward DDNS domains does not contain a match for: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [lanister-cliente.lannister.lan.]
+IP Address: [192.168.11.1]
+DHCID: [00000138231BECE91C975217FEDD10AFA343BF1CF684A9BC0A04A9734D4CA9660DC752]
+Lease Expires On: 20251120120800
+Lease Length: 1200
+Conflict Resolution: yes
+  The request has been discarded.
+324 11:48:00.895 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: received and queued a request.
+324 11:48:00.895 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B:
+324 11:48:00.895 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: Forward Add to server: 192.168.10.252 port:53
+324 11:48:00.896 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.896 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+324 11:48:00.897 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: Forward Replace to server: 192.168.10.252 port:53
+324 11:48:00.897 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+324 11:48:00.897 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+324 11:48:00.897 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, jon.stark.lan., with an RCODE: 8
+324 11:48:00.897 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [jon.stark.lan.]
+IP Address: [192.168.10.32]
+DHCID: [000001A6A759A4B427F73DCA4F85FEFC0AFD6F0C0A6E7857FEBE3140BA3165A259209B]
+Lease Expires On: 20251120120800
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:28.936 kea-dhcp-ddns.dhcpddns DHCP_DDNS_CONFIGURE configuration update received: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+325 08:08:28.936 kea-dhcp-ddns.dctl DCTL_CONFIG_START parsing new configuration: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+325 08:08:28.936 kea-dhcp-ddns.dctl DCTL_CONFIG_COMPLETE server has completed configuration: listening on 127.0.0.1, port 53001, using UDP
+325 08:08:28.936 kea-dhcp-ddns.dctl DCTL_RUN_PROCESS DhcpDdns starting application event loop
+325 08:08:28.937 kea-dhcp-ddns.dhcpddns DHCP_DDNS_STARTED Kea DHCP-DDNS server version 2.2.0 started
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command build-report registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-get registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-reload registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-set registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-test registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-write registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command shutdown registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command status-get registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command version-get registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get-all registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset registered
+325 08:08:28.937 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset-all registered
+325 08:08:28.937 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_RECONFIGURING application is reconfiguring the queue manager
+325 08:08:28.937 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_STARTED application's queue manager has begun listening for requests.
+325 08:08:29.143 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: received and queued a request.
+325 08:08:29.143 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663:
+325 08:08:29.146 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Forward Add to server: 192.168.10.252 port:53
+325 08:08:29.146 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: received and queued a request.
+325 08:08:29.146 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: received and queued a request.
+325 08:08:29.146 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 0000017014713D5DB43CC4A7AB247A68114B35954719FC7BD28F80D0A4193821643A82: received and queued a request.
+325 08:08:29.146 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_MATCH No DNS servers match FQDN lanister-cliente.lannister.lan.
+325 08:08:29.146 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_FWD_MATCH_ERROR Request ID 0000017014713D5DB43CC4A7AB247A68114B35954719FC7BD28F80D0A4193821643A82: the configured list of forward DDNS domains does not contain a match for: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [lanister-cliente.lannister.lan.]
+IP Address: [192.168.11.1]
+DHCID: [0000017014713D5DB43CC4A7AB247A68114B35954719FC7BD28F80D0A4193821643A82]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+  The request has been discarded.
+325 08:08:29.147 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: received and queued a request.
+325 08:08:29.147 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F:
+325 08:08:29.147 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Add to server: 192.168.10.252 port:53
+325 08:08:29.147 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 2  Transaction count: 2
+325 08:08:29.147 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.147 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:08:29.147 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Forward Replace to server: 192.168.10.252 port:53
+325 08:08:29.147 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: received and queued a request.
+325 08:08:29.147 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 3  Transaction count: 2
+325 08:08:29.147 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: received and queued a request.
+325 08:08:29.147 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 4  Transaction count: 2
+325 08:08:29.148 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, jon.stark.lan., with an RCODE: 8
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [jon.stark.lan.]
+IP Address: [192.168.10.31]
+DHCID: [000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663:
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Forward A/AAAA Remove to server: 192.168.10.252 port:53
+325 08:08:29.148 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:08:29.148 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Replace to server: 192.168.10.252 port:53
+325 08:08:29.148 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 3  Transaction count: 2
+325 08:08:29.149 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.149 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:08:29.149 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Forward RR Remove to server: 192.168.10.252 port:53
+325 08:08:29.149 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 3  Transaction count: 2
+325 08:08:29.149 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.149 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.149 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Reverse Replace to server: 192.168.10.252 port:53
+325 08:08:29.149 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 3  Transaction count: 2
+325 08:08:29.150 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_SUCCEEDED DHCP_DDNS Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: successfully added the DNS mapping addition for this request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [bran.stark.lan.]
+IP Address: [192.168.10.30]
+DHCID: [000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F:
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward A/AAAA Remove to server: 192.168.10.252 port:53
+325 08:08:29.150 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXRRSET
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REMOVE_RRS_REJECTED DNS Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Server, 192.168.10.252 port:53, rejected a DNS update request to remove forward RR entries for FQDN, jon.stark.lan., with an RCODE: 7
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_REMOVE_FAILED DHCP_DDNS Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Transaction outcome: Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 1 (CHG_REMOVE)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [jon.stark.lan.]
+IP Address: [192.168.10.31]
+DHCID: [000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663:
+325 08:08:29.150 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Forward Add to server: 192.168.10.252 port:53
+325 08:08:29.150 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 2
+325 08:08:29.155 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.155 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.155 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward RR Remove to server: 192.168.10.252 port:53
+325 08:08:29.155 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 2
+325 08:08:29.155 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.155 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:08:29.155 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Forward Replace to server: 192.168.10.252 port:53
+325 08:08:29.155 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 2
+325 08:08:29.157 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.157 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.157 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Reverse Remove to server: 192.168.10.252 port:53
+325 08:08:29.157 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 2
+325 08:08:29.157 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.158 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:08:29.158 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, jon.stark.lan., with an RCODE: 8
+325 08:08:29.158 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [jon.stark.lan.]
+IP Address: [192.168.10.31]
+DHCID: [000001A5EC975F9E4A0B8A0FB62ED292329910C7EA27A33F2115E034968777E7FA9663]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.158 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 1
+325 08:08:29.161 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: received and queued a request.
+325 08:08:29.161 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173:
+325 08:08:29.161 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Forward Add to server: 192.168.10.252 port:53
+325 08:08:29.161 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.161 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.161 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_REMOVE_SUCCEEDED DHCP_DDNS Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: successfully removed the DNS mapping addition for this request: Type: 1 (CHG_REMOVE)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [bran.stark.lan.]
+IP Address: [192.168.10.30]
+DHCID: [000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.161 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F:
+325 08:08:29.161 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Add to server: 192.168.10.252 port:53
+325 08:08:29.162 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: received and queued a request.
+325 08:08:29.162 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 2
+325 08:08:29.162 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: received and queued a request.
+325 08:08:29.162 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 2  Transaction count: 2
+325 08:08:29.162 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.162 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:08:29.163 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Forward Replace to server: 192.168.10.252 port:53
+325 08:08:29.163 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 2  Transaction count: 2
+325 08:08:29.163 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 2  Transaction count: 2
+325 08:08:29.164 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.164 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.164 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Reverse Replace to server: 192.168.10.252 port:53
+325 08:08:29.164 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 2  Transaction count: 2
+325 08:08:29.164 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.164 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:08:29.164 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, sansha.stark.lan., with an RCODE: 8
+325 08:08:29.164 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [sansha.stark.lan.]
+IP Address: [192.168.10.101]
+DHCID: [000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.165 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173:
+325 08:08:29.165 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Forward A/AAAA Remove to server: 192.168.10.252 port:53
+325 08:08:29.165 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 2
+325 08:08:29.166 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.166 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:08:29.166 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_SUCCEEDED DHCP_DDNS Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: successfully added the DNS mapping addition for this request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [bran.stark.lan.]
+IP Address: [192.168.10.30]
+DHCID: [000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.166 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 1
+325 08:08:29.166 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.166 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:08:29.166 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Forward RR Remove to server: 192.168.10.252 port:53
+325 08:08:29.166 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_ELIGIBLE_JOBS although there are queued requests, there are pending transactions for each, Queue count: 1  Transaction count: 1
+325 08:08:29.167 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.167 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXRRSET
+325 08:08:29.167 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REMOVE_RRS_REJECTED DNS Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Server, 192.168.10.252 port:53, rejected a DNS update request to remove forward RR entries for FQDN, sansha.stark.lan., with an RCODE: 7
+325 08:08:29.167 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_REMOVE_FAILED DHCP_DDNS Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Transaction outcome: Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 1 (CHG_REMOVE)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [sansha.stark.lan.]
+IP Address: [192.168.10.101]
+DHCID: [000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:08:29.167 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173:
+325 08:08:29.167 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Forward Add to server: 192.168.10.252 port:53
+325 08:08:29.167 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.167 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:08:29.168 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Forward Replace to server: 192.168.10.252 port:53
+325 08:08:29.168 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:08:29.168 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:08:29.168 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, sansha.stark.lan., with an RCODE: 8
+325 08:08:29.168 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [sansha.stark.lan.]
+IP Address: [192.168.10.101]
+DHCID: [000001D6EAF40711678F98FC232D4B3C41AA2559C54E52A288515DB5D58B5A049C4173]
+Lease Expires On: 20251121082829
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:16:50.067 kea-dhcp-ddns.dhcpddns DHCP_DDNS_CONFIGURE configuration update received: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+325 08:16:50.067 kea-dhcp-ddns.dctl DCTL_CONFIG_START parsing new configuration: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+325 08:16:50.067 kea-dhcp-ddns.dctl DCTL_CONFIG_COMPLETE server has completed configuration: listening on 127.0.0.1, port 53001, using UDP
+325 08:16:50.067 kea-dhcp-ddns.dctl DCTL_RUN_PROCESS DhcpDdns starting application event loop
+325 08:16:50.067 kea-dhcp-ddns.dhcpddns DHCP_DDNS_STARTED Kea DHCP-DDNS server version 2.2.0 started
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command build-report registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-get registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-reload registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-set registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-test registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-write registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command shutdown registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command status-get registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command version-get registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get-all registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset registered
+325 08:16:50.067 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset-all registered
+325 08:16:50.067 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_RECONFIGURING application is reconfiguring the queue manager
+325 08:16:50.067 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_STARTED application's queue manager has begun listening for requests.
+325 08:16:50.281 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 00000108F962A43E4246CEDE76293B7940B5D36D98DAFF97F7933FBF7CA739010A6E48: received and queued a request.
+325 08:16:50.281 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_MATCH No DNS servers match FQDN lanister-cliente.lannister.lan.
+325 08:16:50.281 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_NO_FWD_MATCH_ERROR Request ID 00000108F962A43E4246CEDE76293B7940B5D36D98DAFF97F7933FBF7CA739010A6E48: the configured list of forward DDNS domains does not contain a match for: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [lanister-cliente.lannister.lan.]
+IP Address: [192.168.11.1]
+DHCID: [00000108F962A43E4246CEDE76293B7940B5D36D98DAFF97F7933FBF7CA739010A6E48]
+Lease Expires On: 20251121083650
+Lease Length: 1200
+Conflict Resolution: yes
+  The request has been discarded.
+325 08:16:50.282 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: received and queued a request.
+325 08:16:50.282 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3:
+325 08:16:50.286 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: Forward Add to server: 192.168.10.252 port:53
+325 08:16:50.287 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: received and queued a request.
+325 08:16:50.287 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F:
+325 08:16:50.287 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: Forward Add to server: 192.168.10.252 port:53
+325 08:16:50.288 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.289 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:16:50.289 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: Forward Replace to server: 192.168.10.252 port:53
+325 08:16:50.289 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.289 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:16:50.289 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: Forward Replace to server: 192.168.10.252 port:53
+325 08:16:50.291 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.291 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:16:50.291 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, jon.stark.lan., with an RCODE: 8
+325 08:16:50.291 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [jon.stark.lan.]
+IP Address: [192.168.10.31]
+DHCID: [0000016A85DB78CA5B174DC014DF7BCB85FF46FE0AB000FD3545FD64C6CDAE303934C3]
+Lease Expires On: 20251121083650
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:16:50.291 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.291 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:16:50.291 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, sansha.stark.lan., with an RCODE: 8
+325 08:16:50.291 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [sansha.stark.lan.]
+IP Address: [192.168.10.32]
+DHCID: [000001CE2F874278C61F838078D871D44B1947CFBD566AAFAE9ECC5B68CEF11C0EFC5F]
+Lease Expires On: 20251121083650
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:16:50.310 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: received and queued a request.
+325 08:16:50.311 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F:
+325 08:16:50.311 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Add to server: 192.168.10.252 port:53
+325 08:16:50.312 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.313 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:16:50.313 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Replace to server: 192.168.10.252 port:53
+325 08:16:50.314 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.314 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:16:50.314 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Reverse Replace to server: 192.168.10.252 port:53
+325 08:16:50.316 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:16:50.316 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:16:50.316 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_SUCCEEDED DHCP_DDNS Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: successfully added the DNS mapping addition for this request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [bran.stark.lan.]
+IP Address: [192.168.10.30]
+DHCID: [000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F]
+Lease Expires On: 20251121083650
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:18:19.180 kea-dhcp-ddns.dhcpddns DHCP_DDNS_CONFIGURE configuration update received: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." }, { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "lannister.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+325 08:18:19.180 kea-dhcp-ddns.dctl DCTL_CONFIG_START parsing new configuration: { "dns-server-timeout": 100, "forward-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "stark.lan." }, { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "lannister.lan." } ] }, "ip-address": "127.0.0.1", "loggers": [ { "debuglevel": 0, "name": "kea-dhcp-ddns", "output_options": [ { "flush": true, "maxsize": 204800, "maxver": 5, "output": "/var/log/kea/ddns-info.log", "pattern": "%d{%j %H:%M:%S.%q} %c %m\n" } ], "severity": "info" } ], "ncr-format": "JSON", "ncr-protocol": "UDP", "port": 53001, "reverse-ddns": { "ddns-domains": [ { "dns-servers": [ { "ip-address": "192.168.10.252", "port": 53 } ], "key-name": "dhcpddns", "name": "168.192.in-addr.arpa." } ] }, "tsig-keys": [ { "algorithm": "hmac-sha224", "name": "dhcpddns", "secret": "*****" } ] }
+325 08:18:19.180 kea-dhcp-ddns.dctl DCTL_CONFIG_COMPLETE server has completed configuration: listening on 127.0.0.1, port 53001, using UDP
+325 08:18:19.181 kea-dhcp-ddns.dctl DCTL_RUN_PROCESS DhcpDdns starting application event loop
+325 08:18:19.181 kea-dhcp-ddns.dhcpddns DHCP_DDNS_STARTED Kea DHCP-DDNS server version 2.2.0 started
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command build-report registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-get registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-reload registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-set registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-test registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command config-write registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command shutdown registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command status-get registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command version-get registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-get-all registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset registered
+325 08:18:19.181 kea-dhcp-ddns.commands COMMAND_REGISTERED Command statistic-reset-all registered
+325 08:18:19.181 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_RECONFIGURING application is reconfiguring the queue manager
+325 08:18:19.181 kea-dhcp-ddns.dhcpddns DHCP_DDNS_QUEUE_MGR_STARTED application's queue manager has begun listening for requests.
+325 08:18:19.382 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: received and queued a request.
+325 08:18:19.382 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1:
+325 08:18:19.387 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: Forward Add to server: 192.168.10.252 port:53
+325 08:18:19.387 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: received and queued a request.
+325 08:18:19.387 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18:
+325 08:18:19.387 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: Forward Add to server: 192.168.10.252 port:53
+325 08:18:19.388 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.388 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:18:19.389 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: Forward Replace to server: 192.168.10.252 port:53
+325 08:18:19.389 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.389 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:18:19.389 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: Forward Replace to server: 192.168.10.252 port:53
+325 08:18:19.390 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.390 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:18:19.390 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, sansha.stark.lan., with an RCODE: 8
+325 08:18:19.390 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [sansha.stark.lan.]
+IP Address: [192.168.10.32]
+DHCID: [0000011A21749F2A464F240DAB3C4DB8F88C7F0D931680AEC1D3410B703A6A3D4F8A18]
+Lease Expires On: 20251121083819
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:18:19.390 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.390 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NXRRSET
+325 08:18:19.390 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_FORWARD_REPLACE_REJECTED DNS Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: Server, 192.168.10.252 port:53, rejected a DNS update request to replace the address mapping for FQDN, jon.stark.lan., with an RCODE: 8
+325 08:18:19.390 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_FAILED DHCP_DDNS Request ID 0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1: Transaction outcome Status: Failed, Event: UPDATE_FAILED_EVT,  Forward change: failed,  Reverse change: failed,  request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [jon.stark.lan.]
+IP Address: [192.168.10.31]
+DHCID: [0000014DB92344B7A973261F8E5393C7B6D45B365C62204BB1A23706BF4AB0836B3FD1]
+Lease Expires On: 20251121083819
+Lease Length: 1200
+Conflict Resolution: yes
+
+325 08:18:19.412 kea-dhcp-ddns.dhcp-to-d2 DHCP_DDNS_QUEUE_MGR_QUEUE_RECEIVE Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: received and queued a request.
+325 08:18:19.412 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_STARTING_TRANSACTION Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F:
+325 08:18:19.413 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Add to server: 192.168.10.252 port:53
+325 08:18:19.414 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.414 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: YXDOMAIN
+325 08:18:19.414 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Forward Replace to server: 192.168.10.252 port:53
+325 08:18:19.416 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.416 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:18:19.416 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_REQUEST_SENT Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: Reverse Replace to server: 192.168.10.252 port:53
+325 08:18:19.417 kea-dhcp-ddns.asiodns ASIODNS_FETCH_COMPLETED upstream fetch to 192.168.10.252(53) has now completed
+325 08:18:19.417 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_UPDATE_RESPONSE_RECEIVED Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: to server: 192.168.10.252 port:53 status: SUCCESS, rcode: NOERROR
+325 08:18:19.417 kea-dhcp-ddns.d2-to-dns DHCP_DDNS_ADD_SUCCEEDED DHCP_DDNS Request ID 000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F: successfully added the DNS mapping addition for this request: Type: 0 (CHG_ADD)
+Forward Change: yes
+Reverse Change: yes
+FQDN: [bran.stark.lan.]
+IP Address: [192.168.10.30]
+DHCID: [000001B525587267F230ED62E99211CCFD928FF42B66FFDB3F05B04EF1AF8A1084D89F]
+Lease Expires On: 20251121083819
+Lease Length: 1200
+Conflict Resolution: yes
+
