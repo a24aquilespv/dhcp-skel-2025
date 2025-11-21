@@ -21,12 +21,13 @@
                 "name": "kea-dhcp4",
                 "severity": "INFO",
                 "debuglevel": 0,
-                // Versión de kea empleada: 2.2.0
+                // Versión de kea que usaba antes (debian repos): 2.2.0
+                // Versión de kea que uso ahora (ISC cloudsmith 3.0 latest): 3.0.2
                 // output_options: Era la key en versiones <2.5.1
                 // output-options: Añadido en la versión 2.5.1
                 // output_options: Se convierte en alias de output-options 2.5.2
                 // output_options: Deprecado >2.7.4
-                "output_options": [
+                "output-options": [
                     {
                         // Fichero de salida
                         "output": "/var/log/kea/dhcp4-info.log",

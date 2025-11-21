@@ -16,8 +16,12 @@ RUN apt-get install -y \
     iputils-ping \
     dnsutils \
     rsyslog \
-    kea-dhcp4-server \
-    kea-dhcp-ddns-server \
+    # Nombres de los paquetes empaquetados por los mantainers de Debian
+    # kea-dhcp4-server \
+    # kea-dhcp-ddns-server \
+    # Nombre de los paquetes empaquetados por el ISC
+    isc-kea-dhcp4-server \
+    isc-kea-dhcp-ddns-server \
     && rm -rf /var/lib/apt/lists/*
 
 #COPY kea-dhcp4.conf /etc/kea/kea-dhcp4.conf

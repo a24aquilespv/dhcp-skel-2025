@@ -9,7 +9,7 @@ RUN apt update  && apt install -y \
     bind9utils \
     dnsutils \
     nano \
-    vim \
+    # vim \
     neovim \
     && rm -rf /var/lib/apt/lists/*
 
