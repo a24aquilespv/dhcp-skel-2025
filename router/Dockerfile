@@ -2,6 +2,7 @@ FROM debian:13
 
 
 RUN apt update && apt install -y \
+    traceroute \
     iputils-ping \
     iproute2 \
     procps \
