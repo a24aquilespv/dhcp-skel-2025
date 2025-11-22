@@ -15,4 +15,4 @@ log_path="/var/log/kea/"
 
 # Levantar servidor ddns y dhcp4
 kea-dhcp-ddns -c /etc/kea/kea-dhcp-ddns.conf -d &
-kea-dhcp4 -c /etc/kea/kea-dhcp4.conf -d &
+kea-dhcp4 -c /etc/kea/kea-dhcp4.conf -d

@@ -53,5 +53,5 @@ ip link set dev eth3 up
 
 
 # Servidor relay DHCP
-dhcp-helper -s 192.168.10.254 -i eth0 -i eth1 -d
+dhcp-helper -s 192.168.10.254 -i eth1 -i eth2 -d
 
