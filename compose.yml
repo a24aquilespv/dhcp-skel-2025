@@ -21,12 +21,16 @@ services:
         networks:
             dhcp_lab:
                 ipv4_address: 192.168.10.5
+                mac_address: 00:1a:2b:3c:4d:5e
             red-lannister:
                 ipv4_address: 192.168.11.5
+                mac_address: a4:b5:c6:d7:e8:f9
             red-vbox:
                 ipv4_address: 192.168.54.5
+                mac_address: de:ad:be:ef:00:01
             wan:
                 ipv4_address: 192.0.2.5
+                mac_address: 80:5e:c0:93:f6:d0
         cap_add:
             - NET_ADMIN
 
@@ -82,6 +86,8 @@ services:
                 ipv4_address: 192.168.10.252
         dns: 127.0.0.1
         command: [ "-4", "-g" ]
+        cap_add:
+            - NET_ADMIN
         volumes:
             - ./arya/named.conf.options:/etc/bind/named.conf.options
             - ./arya/named.conf.local:/etc/bind/named.conf.local
@@ -154,7 +160,7 @@ services:
         cap_add:
             - NET_ADMIN
         command: >
-            sh -c "ip addr flush dev eth0 && dhclient -v eth0 && sleep infinity" && ip route delete default"
+            sh -c "ip addr flush dev eth0 && dhclient -v eth0 && sleep infinity"
         depends_on:
             - ned
             # - robb

@@ -80,6 +80,13 @@
         "ddns-override-client-update": false,
         "ddns-replace-client-name": "never",
         "ddns-generated-prefix": "myhost",
+	// Cómo se están creando y eliminando contenedores constantement,
+	// el DHCID de los clientes nunca es el mismo. Por ello, la directiva
+	// "ddns-conflict-resolution-mode" no puede valer "check-with-dhcid",
+	// tiene que valer check-exists-with-dhcid"
+	// Ver documentación de kea:
+	// https://kea.readthedocs.io/en/latest/arm/dhcp4-srv.html#:~:text=check%2Dexists%2Dwith%2Ddhcid
+	"ddns-conflict-resolution-mode": "check-exists-with-dhcid",
         // "ddns-qualifying-suffix": "",
         // "hostname-char-set": "",
         // "hostname-char-replacement": "",

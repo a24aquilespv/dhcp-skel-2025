@@ -11,6 +11,10 @@ zone "stark.lan" {
         127.0.0.1;
         key "dhcpddns";
     };
+
+#    update-policy {
+#        grant dhcpddns name stark.lan. A AAAA;
+#    };
 };
 
 zone "lannister.lan" {
